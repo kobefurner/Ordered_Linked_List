@@ -185,6 +185,10 @@ int OrderedLinkedList<Type>::find( const Type& item ) const
 template <typename Type>
 void OrderedLinkedList<Type>::remove( const Type& item )
 {
+    if (front == nullptr)
+    {
+        return;
+    }
    if (front->data == item)
    {
        Node<Type>* temp = front;
