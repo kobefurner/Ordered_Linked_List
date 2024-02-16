@@ -125,6 +125,10 @@ Type OrderedLinkedList<Type>::getFirst() const
 template <typename Type>
 Type OrderedLinkedList<Type>::getLast() const
 {
+    if (front == nullptr)
+    {
+        throw std::runtime_error("List is empty");
+    }
     Node<Type>* temp = front;
         while (temp->next != nullptr)
         {
