@@ -127,7 +127,7 @@ Type OrderedLinkedList<Type>::getLast() const
 {
     if (front == nullptr)
     {
-        throw std::runtime_error("List is empty");
+        throw std::out_of_range("List is empty");
     }
     Node<Type>* temp = front;
         while (temp->next != nullptr)
