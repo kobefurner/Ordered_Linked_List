@@ -60,6 +60,7 @@ OrderedLinkedList<Type>& OrderedLinkedList<Type>::operator=(const OrderedLinkedL
 {
     if (this != &other)
     {
+        this->clear();
         Node<Type>* temp = other.front;
         while (temp != nullptr)
         {
@@ -138,10 +139,14 @@ void OrderedLinkedList<Type>::insert(const Type& item)
     Node<Type>* newNode = new Node<Type>;
     newNode->data = item;
 
-    if (item < front->data)
+    if (front == nullptr || item < front->data)
     {
         newNode->next = front;
         front = newNode;
+        if (back == nullptr)
+        {
+            back = newNode;
+        }
     }
     else
     {
@@ -157,6 +162,7 @@ void OrderedLinkedList<Type>::insert(const Type& item)
             back = newNode;
         }
     }
+    count++;
 }
 
 template <typename Type>
