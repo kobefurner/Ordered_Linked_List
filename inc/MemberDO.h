@@ -1,8 +1,8 @@
 #ifndef MEMBERDO
 #define MEMBERDO
 
-#include "LinkedList.hpp"
-#include <string>
+#include "OrderedLinkedList.hpp"
+#include <string> 
 
 class MemberDO
 {

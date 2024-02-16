@@ -1,6 +1,7 @@
 #include "MemberDO.h"
 #include <iostream>
 #include <fstream>
+#include "OrderedLinkedList.hpp"
 
 using namespace std;
 
@@ -62,14 +63,14 @@ void MemberDO::setDues(double d)
 
 bool MemberDO::operator<( const MemberDO& rhs) const {
    // TODO
-	return true;
+	return key < rhs.key;
 }
 bool MemberDO::operator==( const MemberDO& rhs )const {
 	// TODO
-   return true;
+   return key == rhs.key;
 }
 
 bool MemberDO::operator!=( const MemberDO& rhs) const {
-	// TODO
-   return true;
+	// T
+   return !(*this == rhs);
 }
